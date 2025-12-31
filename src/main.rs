@@ -1,5 +1,6 @@
 use crate::async1::feature::future_main;
 use crate::async1::remote::remote_main;
+use crate::async1::share1::share1_main;
 use crate::async1::tasks::task_main;
 
 mod async1;
@@ -10,8 +11,10 @@ async fn main() {
         // Example 01: execute async tasks
         task_main().await;
         // Example 02: some basic future aspect
-        future_main().await
+        future_main().await;
+        // Example 03: remotely fulfill the future.data
+        remote_main().await;
     }
     
-    remote_main().await;
+    share1_main().await;    
 }
